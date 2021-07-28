@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws Exception{
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        String s[] = new String[n];
+        
+        for(int i=0;i<n;i++){
+            s[i] = br.readLine();
+        }
+        
+        for(int i=0;i<n;i++){
+            BigDecimal max = new BigDecimal(s[i]);
+            int idx = i;
+            for(int j=i+1;j<n;j++){
+                BigDecimal curr = new BigDecimal(s[j]);
+                if(curr.compareTo(max) == 1){
+                    max = curr;
+                    idx=j; 
+                }
+            }
+            String temp = s[i];
+            s[i] = s[idx];
+            s[idx] = temp;
+        }
+
+        for(int i=0;i<n;i++){
+            System.out.println(s[i]);
+        }
+            
+    }
+}
