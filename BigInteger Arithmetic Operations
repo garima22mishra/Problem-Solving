@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws Exception{
+        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+        String s1 = sc.readLine();
+        String s2 = sc.readLine();
+        
+        BigInteger b1 = new BigInteger(s1);
+        BigInteger b2 = new BigInteger(s2);
+        
+        System.out.println(b1.add(b2));
+        System.out.println(b1.multiply(b2));
+    }
+}
